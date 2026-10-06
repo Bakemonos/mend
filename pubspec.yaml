@@ -1,0 +1,32 @@
+name: mend
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_screenutil: ^5.9.3
+  flutter_riverpod: ^3.4.3
+  go_router: ^18.0.2
+  google_fonts: ^8.2.1
+  flutter_svg: ^2.3.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+z1  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
