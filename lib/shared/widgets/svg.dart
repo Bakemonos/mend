@@ -2,27 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MySvg extends StatelessWidget {
-  final double? iconSize;
-  final String assetPath;
-  final Color? color;
-  final BoxFit? fit;
-
   const MySvg({
     super.key,
     required this.assetPath,
-    this.iconSize,
     this.color,
-    this.fit,
+    this.size,
   });
+
+  final String assetPath;
+  final Color? color;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
+    final iconTheme = IconTheme.of(context);
+    final c = color ?? iconTheme.color;
+    final s = size ?? iconTheme.size ?? 24;
+
     return SvgPicture.asset(
       assetPath,
-      width: iconSize,
-      height: iconSize,
-      fit: fit ?? BoxFit.contain,
-      colorFilter: color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
+      width: s,
+      height: s,
+      colorFilter: c == null ? null : ColorFilter.mode(c, BlendMode.srcIn),
     );
   }
 }

@@ -3,31 +3,40 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mend/core/routing/router.dart';
 import 'package:mend/core/theme/theme.dart';
-import 'package:mend/shared/controllers/toggler_provider.dart';
+import 'package:mend/shared/controllers/theme_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final prefs = await SharedPreferences.getInstance();
+
+  runApp(ProviderScope(
+    overrides: [sharedPrefsProvider.overrideWithValue(prefs)],
+    child: const MendApp(),
+  ));
 }
 
-class MyApp extends ConsumerWidget {
-  const MyApp({super.key});
+class MendApp extends ConsumerWidget {
+  const MendApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
-    final themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
-
+    final themeMode = ref.watch(themeModeProvider);
+ 
     return ScreenUtilInit(
-      designSize: Size(1280, 800),
-      child: MaterialApp.router(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        themeMode: themeMode,
-        theme: MyTheme.lightTheme(),
-        // darkTheme: MyTheme.darkTheme(),
-        themeAnimationDuration: Duration.zero,
-        routerConfig: routes,
-      ),
+      designSize: const Size(390, 844),
+      minTextAdapt: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          theme: MyTheme.lightTheme(),
+          darkTheme: MyTheme.darkTheme(),
+          themeAnimationDuration: Duration.zero,
+          themeMode: themeMode,
+          routerConfig: routes,
+        );
+      },
     );
   }
 }

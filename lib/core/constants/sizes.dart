@@ -6,6 +6,7 @@ abstract class AppSize {
   static const double image3XSmall = 6.0;
   static const double padding2XSmall = 8.0;
   static const double paddingXSmall  = 12.0;
+  static const double paddingSSmall  = 14.0;
   static const double paddingSmall   = 16.0;
   static const double paddingMedium  = 24.0;
   static const double paddingLarge   = 32.0;
@@ -13,16 +14,16 @@ abstract class AppSize {
   static const double padding2XLarge = 48.0;
 
   //? SPACING
-  static const double xss = 2.0;
-  static const double xs = 4.0;
-  static const double sm = 8.0;
-  static const double m = 12.0;
-  static const double msm = 14.0;
-  static const double md = 16.0;
-  static const double lg = 24.0;
-  static const double xl = 32.0;
-  static const double xml = 40.0;
-  static const double xxl = 48.0;
+  static const double superSmall = 2.0;
+  static const double extraSmall = 4.0;
+  static const double small = 8.0;
+  static const double mediumSmall = 12.0;
+  static const double mediumPlus = 14.0;
+  static const double medium = 16.0;
+  static const double mediumLarge = 24.0;
+  static const double large = 32.0;
+  static const double extraLarge = 40.0;
+  static const double superLarge = 48.0;
 
   //? BUTTON
   static const double buttonHeightSmall = 32.0;
@@ -37,19 +38,20 @@ abstract class AppSize {
   static const double borderSmall = 2.0;
 
   //? RADUIS
+  static const double radiusSuperSmall = 4.0;
   static const double radiusSmall = 8.0;
   static const double radiusMedium = 12.0;
   static const double radiusDefault = 18.0;
   static const double radiusLarge = 24.0;
 
   //? TEXT
-  static const double fontSuperTiny = 8.0;
-  static const double fontTiny = 10.0;
-  static const double fontExtraTiny = 11.0;
+  static const double fontMicro = 8.0;
+  static const double fontExtraSmall = 10.0;
+  static const double fontSmallPlus = 11.0;
   static const double fontSmall = 12.0;
-  static const double fontMedium = 14.0;
-  static const double fontLarge = 16.0;
-  static const double fontMediumLarge = 18.0;
+  static const double fontMedium = 14.0; 
+  static const double fontMediumLarge = 16.0;
+  static const double fontLarge = 18.0;
   static const double fontExtraLarge = 20.0;
   static const double fontHuge = 24.0;
 
@@ -79,4 +81,13 @@ abstract class AppSize {
   static const double iconXXL = 64.0;
   static const double iconDisplay = 72.0;
   static const double iconMassive = 96.0;
+
+
+  static const double defaultHeight = 48.0;
+
+  static const double navigationBarHeight = 56.0;
+  static const double textFieldHeight = defaultHeight;
+  static const double buttonHeight = defaultHeight;
+  static const double DropDownHeight = defaultHeight;
+
 }
