@@ -2,11 +2,15 @@
 
 // Solar Linaer Icons
 
+import 'package:flutter/material.dart';
+
 abstract class AppIcon{
     AppIcon._();
 
     //? ICON DATA
-    // static const IconData iconAdmin = Icons.shield_outlined;
+    static const IconData iconAdd = Icons.add;
+    static const IconData iconDay = Icons.wb_sunny_outlined;
+    static const IconData iconNight = Icons.dark_mode_outlined;
 
     //? SVG
     static const String svgSearch= 'assets/icons/search.svg';

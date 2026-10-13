@@ -7,7 +7,7 @@ import 'package:mend/core/constants/icons.dart';
 import 'package:mend/core/constants/padding_size.dart';
 import 'package:mend/core/constants/sizes.dart';
 import 'package:mend/core/extentions/context_extentions.dart';
-import 'package:mend/features/medications/controllers/med_modification_provider.dart';
+import 'package:mend/features/medications/controllers/mend_modification_provider.dart';
 import 'package:mend/shared/widgets/svg.dart';
 
 class MedicationDetailsCard extends ConsumerWidget {

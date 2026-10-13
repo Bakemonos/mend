@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mend/core/constants/enum.dart';
 
-
 class MedicationFilterNotifier extends Notifier<TimeFilter> {
   @override
   TimeFilter build() => TimeFilter.all;
